@@ -30,9 +30,13 @@ public class Account {
         System.out.println(this.name);
     }
 
-    public boolean withDraw(double value){
+    public void deposit(double value){
+        balance += value;
+    }
+
+    public boolean withDraw(double value) {
         // Decrementar o valor do balance
-        if (balance < value){
+        if (balance < value) {
             return false;
         }
         balance -= value;

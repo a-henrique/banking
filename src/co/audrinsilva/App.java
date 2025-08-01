@@ -5,10 +5,10 @@ public class App {
         System.out.println("Olá mundo");
         // Classe inicial, "main" para execução do programa
 
-        Account account = new Account("0001", "1234", "Audrin");
+        Account account = new Account("0001", "1234", "");
 
-        // ToDo: 1. Criar uma conta (Agencia, conta, nome) (OK)
-        //          limitar o nome = 12 caracteres
+        // Done: 1. Criar uma conta (Agencia, conta, nome) (OK)
+        // Done: limitar o nome = 12 caracteres
 
         // ToDo: 2. Sacar valores
         //          Um usuário não pode sacar

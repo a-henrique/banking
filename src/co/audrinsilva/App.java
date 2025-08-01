@@ -1,44 +1,35 @@
 package co.audrinsilva;
 
+import java.util.Scanner;
+
 public class App {
     public static void main (String[] args){
-        // Classe inicial, "main" para execução do programa
-
+        Scanner scanner = new Scanner(System.in);
         Account account = new Account("0001", "1234", "Seu Barriga");
 
-        boolean succeed = account.withDraw(200);
-        if (!succeed){
-            System.out.println("Você não tem saldo suficiente para sacar");
+        // D - Deposito
+        // S - Saque
+        // E - Sair
+        while (true){
+            System.out.println("O que deseja fazer?\nD - Deposito\nS - Saque\nE - Sair");
+            String op = scanner.nextLine();
+            if (op.equals("D")){
+                System.out.println("qual valor deseja depositar?");
+                double value = scanner.nextDouble();
+                account.deposit(value);
+            } else if (op.equals("S")){
+                System.out.println("Qual valor deseja sacar?");
+                double value = scanner.nextDouble();
+                if (!account.withDraw(value)){
+                    System.out.println("Não foi possível sacar o valor " + value);
+                }
+            } else if (op.equals("E")){
+                break;
+            } else {
+                System.out.println("Comando Inválido, tente novamente!");
+            }
+
+            scanner = new Scanner(System.in);
         }
-
-        account.deposit(100);
-        account.deposit(50);
-        account.deposit(100);
-
-        if (!account.withDraw(200)){
-            System.out.println("Você não tem saldo suficiente para sacar");
-        } else {
-            System.out.println("Saque efetuado");
-        }
-
-        if (!account.withDraw(200)){
-            System.out.println("Você não tem saldo suficiente para sacar");
-        } else {
-            System.out.println("Saque efetuado");
-        }
-
-        System.out.println(account);
-
-        // Done: 1. Criar uma conta (Agencia, conta, nome) (OK)
-        // Done: limitar o nome = 12 caracteres
-
-        // Done: 2. Sacar valores
-        //          Um usuário não pode sacar
-        //          mais do que tem
-
-        // Done: 3. Depositar
-
-        // Done: 4. Extrato
-        //      Informar para o usuario as operações (saque, deposito)
     }
 }

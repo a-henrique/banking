@@ -54,4 +54,8 @@ public class Account {
         // return result;
         return "A Conta " + this.name + " " + this.agencia + " / " + this.conta + " possui: R$ " + balance;
     }
+
+    public double getBalance() {
+        return balance;
+    }
 }

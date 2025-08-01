@@ -1,0 +1,22 @@
+package co.audrinsilva;
+
+public class App {
+    public static void main (String[] args){
+        System.out.println("Olá mundo");
+        // Classe inicial, "main" para execução do programa
+
+        Account account = new Account("0001", "1234", "Audrin");
+
+        // ToDo: 1. Criar uma conta (Agencia, conta, nome) (OK)
+        //          limitar o nome = 12 caracteres
+
+        // ToDo: 2. Sacar valores
+        //          Um usuário não pode sacar
+        //          mais do que tem
+
+        // ToDo: 3. Depositar
+
+        // ToDo: 4. Extrato
+        //      Informar para o usuario as operações (saque, deposito)
+    }
+}

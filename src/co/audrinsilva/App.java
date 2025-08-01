@@ -7,10 +7,14 @@ public class App {
 
         Account account = new Account("0001", "1234", "");
 
+        boolean succeed = account.withDraw(200);
+        if (!succeed){
+            System.out.println("Você não tem saldo suficiente para sacar");
+        }
         // Done: 1. Criar uma conta (Agencia, conta, nome) (OK)
         // Done: limitar o nome = 12 caracteres
 
-        // ToDo: 2. Sacar valores
+        // Done: 2. Sacar valores
         //          Um usuário não pode sacar
         //          mais do que tem
 

@@ -8,6 +8,8 @@ public class Account {
 
     private String name;
 
+    private double balance;
+
     private final static int MAX_LENGTH = 12; // Constante para criação de nomes com no máximo 12 caracteres
 
     public Account(String agencia, String conta, String name){
@@ -26,5 +28,15 @@ public class Account {
             this.name = name;
         }
         System.out.println(this.name);
+    }
+
+    public boolean withDraw(double value){
+        // Decrementar o valor do balance
+        if (balance < value){
+            return false;
+        }
+        balance -= value;
+        System.out.println("===> Valor a retirar: " + value + "\n===> Balanço agora é: " + balance);
+        return true;
     }
 }
